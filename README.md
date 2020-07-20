@@ -1,4 +1,4 @@
-# apple-music-album-scraper
+# Apple Music Album Scraper
 
 Download the high quality album cover from Apple Music web player.
 
