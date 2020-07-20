@@ -22,4 +22,4 @@ scraper.py https://music.apple.com/us/album/strangeland-deluxe-version/144318265
 
 ## Disclaimer
 
-This projected is not affiliated with Apple Music in any way. Apple Music is a trademark of Apple Inc.
+This project is not affiliated with Apple Music in any way. Apple Music is a trademark of Apple Inc.
