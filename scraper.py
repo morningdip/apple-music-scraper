@@ -6,9 +6,9 @@ import urllib.parse
 
 if __name__ == '__main__':
   parser = argparse.ArgumentParser(
-    description='Download the clear and original cover image frome Apple Music.')
+    description='Download the clear album cover from Apple Music')
   parser.add_argument(
-    'url', metavar='https://...', type=str, help='the url to the apple music album web page.')
+    'url', metavar='https://...', type=str, help='Apple music album URL')
   args = parser.parse_args()
 
   url = args.url
@@ -25,5 +25,5 @@ if __name__ == '__main__':
   for image in images:
     if image['class'][0] == 'product-lockup__artwork-for-radiosity-effect':
       target_image = image['src']
-      target_image = target_image.replace('44x44', '10000x10000')
-      urllib.request.urlretrieve(target_image, album + ".jpeg") 
+      target_image = target_image.replace('44x44br', '1500x1500')
+      urllib.request.urlretrieve(target_image, album + ".png")
