@@ -1,7 +1,8 @@
 import argparse
+import string
 from bs4 import BeautifulSoup
 import urllib.request
-import urllib.parse
+import re
 
 
 if __name__ == '__main__':
@@ -12,13 +13,16 @@ if __name__ == '__main__':
   args = parser.parse_args()
 
   url = args.url
-  unquote_url = urllib.parse.unquote(url)
-  album = unquote_url.split('/')[-2]
 
-  response = urllib.request.Request(url)
-  res = urllib.request.urlopen(response)
-  html = res.read().decode('utf-8')
-  
+  if re.findall(r'[\u4e00-\u9fff]+', url):
+    album = args.url.split('/')[-2]
+    url = urllib.parse.quote(url, safe=string.printable)
+  else:
+    unquote_url = urllib.parse.unquote(url)
+    album = unquote_url.split('/')[-2]
+
+  result = urllib.request.urlopen(url)
+  html = result.read().decode('utf-8')
   soup = BeautifulSoup(html, "html.parser")
   images = soup.findAll('img')
 
