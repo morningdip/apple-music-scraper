@@ -1,6 +1,7 @@
 # Apple Music Album Scraper
 
 Download the high quality album cover from Apple Music web player.
+
 Support Chinese in URL. (Both UTF-8 and Big5)
 
 ## Installing
